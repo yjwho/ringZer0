@@ -1,0 +1,14 @@
+**File recovery**
+by jhoohoo
+
+After unzipping the files flag.enc and private.pem, open private.pem.
+
+In private.pem, you will see an RSA private key with PEM format.
+
+Use openssl and this RSA private key to decrypt flag.enc.
+
+rsautl - RSA utility
+inkey - the input key file, by default it should be an RSA private key
+in filename - the input filename to read data from
+
+$ openssl rsautl -decrypt -inkey private.pem -in flag.enc
