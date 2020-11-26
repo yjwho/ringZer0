@@ -1,0 +1,33 @@
+**Some martian message**
+*Write-up by jhoohoo*
+
+The Caesar cipher is one of the earliest known and simplest ciphers. It is a type of substitution cipher in which each letter in the plaintext is 'shifted' a certain number of places down the alphabet.
+
+Use https://www.dcode.fr/caesar-cipher to get all possible combination of the shift with input "SYNTPrfneVfPbbyOhgAbgFrpher"
+The most readable one (the top one) is the answer.
+
++13	FLAGCesarIsCoolButNotSecure                <-- ANSWER
++19	ZFUAWymulCmWiifVonHinMywoly
++12	GMBHDftbsJtDppmCvuOpuTfdvsf
++1	RXMSOqemdUeOaaxNgfZafEqogdq
++25	TZOUQsgofWgQcczPihBchGsqifs
++14	EKZFBdrzqHrBnnkAtsMnsRdbtqd
++2	QWLRNpdlcTdNzzwMfeYzeDpnfcp
++24	UAPVRthpgXhRddaQjiCdiHtrjgt
++11	HNCIEguctKuEqqnDwvPqvUgewtg
++9	JPEKGiwevMwGsspFyxRsxWigyvi
++17	BHWCYaownEoYkkhXqpJkpOayqna
++23	VBQWSuiqhYiSeebRkjDejIuskhu
++5	NTIOKmaizQaKwwtJcbVwbAmkczm
++15	DJYEAcqypGqAmmjZsrLmrQcaspc
++7	LRGMIkygxOyIuurHazTuzYkiaxk
++4	OUJPLnbjaRbLxxuKdcWxcBnldan
++3	PVKQMockbScMyyvLedXydComebo
++22	WCRXTvjriZjTffcSlkEfkJvtliv
++21	XDSYUwksjAkUggdTmlFglKwumjw
++6	MSHNJlzhyPzJvvsIbaUvaZljbyl
++20	YETZVxltkBlVhheUnmGhmLxvnkx
++18	AGVBXznvmDnXjjgWpoIjoNzxpmz
++10	IODJFhvduLvFrroExwQrwVhfxuh
++16	CIXDZbpxoFpZlliYrqKlqPbzrob
++8	KQFLHjxfwNxHttqGzyStyXjhzwj
