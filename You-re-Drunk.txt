@@ -1,0 +1,14 @@
+**You're Drunk**
+by jhoohoo
+
+Ayowe awxewr nwaalfw die tiy rgw fklf ua xgixiklrw! Tiy lew qwkxinw.
+
+The cipher here is a substitution cipher where every letter is substitued with the key to the right of the letter on a normal keyboard.
+
+For example, Ayowe = Super
+
+You can also utilize websites like https://quipqiup.com/ to solve simple substitution ciphers like this. 
+
+The original message is: Super secret message for you the glag is chocolate! You are welcome.
+
+Hence the "f"lag is "chocolate".
