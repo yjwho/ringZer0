@@ -1,0 +1,16 @@
+**Public Key Recovery**
+by jhoohoo
+
+1. Copy the private key shown into a new file named key.pem
+2. To get the public key of the RSA private key, use the following openssl command:
+        $ openssl rsa -in key.pem -pubout -out pubkey.pem
+3. Run the following tail, head, and trailing commands to get rid of the header, tail, and '\n' characters from the 
+        $ cat .\pubkey.pem | tail -n 5 | head -n 4 | tr -d '\n'
+4. You are left with the following string:
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDwkrxVrZ+KCl1cX27SHDI7EfgnFJZ0qTHUD6uEeSoZsiVkcu0/XOPbz1RtpK7xxpKMSnH6uDc5On1IEw3A127wW4Y3Lqqwcuhgypd3Sf/bH3z4tC25eqr5gA1sCwSaEw+yBxdnElBNOXxOQsST7aZGDyIUtmpouI1IXqxjrDx2SQIDAQAB
+5. Find the hexadecimal equivalent of the MD5 hash of the string.
+   You can do the following in Python or any language of your choice:
+        import hashlib
+        s="MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDwkrxVrZ+KCl1cX27SHDI7EfgnFJZ0qTHUD6uEeSoZsiVkcu0/XOPbz1RtpK7xxpKMSnH6uDc5On1IEw3A127wW4Y3Lqqwcuhgypd3Sf/bH3z4tC25eqr5gA1sCwSaEw+yBxdnElBNOXxOQsST7aZGDyIUtmpouI1IXqxjrDx2SQIDAQAB"
+        temp = hashlib.md5(s.encode('utf-8')).hexdigest()
+        print(temp)
