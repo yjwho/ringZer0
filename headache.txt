@@ -1,0 +1,20 @@
+** Headache **
+by jhoohoo
+
+Prompt: Answer is closer than you think!
+
+1. The name of the challenge and the prompt make me wonder if the Flag is at the heading
+    of the HTML or the header of the HTTP protocol.
+
+2. Checked the heading. Didn't find anything useful. Now go look at the header.
+
+3. I use Chrome, and there's a Network tab under inspect...
+
+4. This page from Chrome DevTools explain how to get the header
+    https://developers.google.com/web/tools/chrome-devtools/network/?utm_source=devtools&utm_campaign=2019Q1#open
+
+5. The steps I took are:
+    1) right click the refresh button on my browser and select "Empty cashe and Hard Reload"
+    2) Scroll to the top of the requests and click the earliest request made (43 is the name)
+    3) Select the "Header" tab
+    4) Scroll down to the Response Headers and the Flag is one of the properties!

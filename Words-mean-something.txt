@@ -1,0 +1,22 @@
+** Words mean something? **
+by jhoohoo
+
+Promt: some default Latin web stuff
+
+1. If you use Chrome or a Chromium-based browser, click the "lock" icon by the website's
+    url. Select "Cookies".
+
+2. There are two urls:
+    ringzer0ctf.com
+    ringzer0team.com
+
+3. There's nothing under the ringzer0team.com, but when you click on 
+    ringzer0ctf.com > Cookies, there's a Cookie called "flag" with content '0'.
+
+4. When you click on other cookies, some other cookies' content is 1 or other none-zero
+    values. Try changing the "flag" cookie to 1.
+
+5. Go to Inspect > "Console" tab and enter the following to change the cookie's value:
+    document.cookie = "flag=1"
+
+6. Refresh the page and you will see the Latin is replaced with the Flag!

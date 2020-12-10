@@ -1,0 +1,34 @@
+** Big Brother is watching **
+by jhoohoo
+
+The prompt says: Even Google cannot find this one
+
+1. I saw the prompt and Googled "pages Google can't find"
+
+2. The top result is "Why is my page missing from Google Search?"
+    https://support.google.com/webmasters/answer/7474347?hl=en
+
+3. The page explains how Google Search works. The short version is through crawling, 
+    indexing, serving (and ranking). There's also option to view the long version. Click
+    that.
+
+4. In the long version under Crawling, it states: "Crawling is the process by which 
+    Googlebot visits new and updated pages to be added to the Google index. ..."
+    It also tells you "How does Google know which pages not to crawl?"
+
+5. The first bullet point under that states:
+    "Pages blocked in robots.txt won't be crawled, but still might be indexed if linked 
+    to by another page. (Google can infer the content of the page by a link pointing to 
+    it, and index the page without parsing its contents.)"
+
+6. Ah!!!! robots.txt!
+
+7. I typed this in the url:
+    https://ringzer0ctf.com/robots.txt
+
+8. The page only contains:
+    User-agent: *
+    Disallow: /16bfff59f7e8343a2643bdc2ee76b2dc/
+
+9. So we go there: https://ringzer0ctf.com/16bfff59f7e8343a2643bdc2ee76b2dc/ and there's
+    the Flag!!!
