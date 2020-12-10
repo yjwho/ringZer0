@@ -1,0 +1,17 @@
+** I made a dd of Agent Smith usb key **
+by jhoohoo
+
+1. Download and unzip the file
+    $ unzip c32769969ef586f7e7c49b20bc5753fb.zip
+    Archive:  c32769969ef586f7e7c49b20bc5753fb.zip
+        inflating: 86b265d37d1fc10b721a2accae04a60d
+
+2. Open the file in vim
+    $ vim 86b265d37d1fc10b721a2accae04a60d
+
+3. In vim, type :%!xxd to make it a hex editor
+
+4. Then look for "FLAG" or the hex of FLAG. To search in vim, press '/', type the 
+   pattern FLAG, and press Enter to run the search.
+
+5. You see the FLAG!
