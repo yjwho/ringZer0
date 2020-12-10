@@ -1,0 +1,20 @@
+** Bypass me if you can **
+by jhoohoo
+
+1. To read about what SQL Injection is, this is a nice little article about it:
+    https://portswigger.net/web-security/sql-injection
+    (I had to read this because I'm very familiar with SQL but had never heard of 
+    SQL Injection attacks)
+
+2. Then I tried putting "' OR 1=1 --" for the Username, thinking "--" will make 
+    the Password condition a comment
+
+3. I got this error:
+    You have an error in your SQL syntax; check the manual that corresponds to your 
+    MySQL server version for the right syntax to use near '' AND password = ''' at 
+    line 1
+
+4. I realized that it must not have recognized the comment's syntax "--" since it's 
+    complaining about the syntax for the password property
+
+5. Then I tried "' OR 1=1 #" and I'm logged in!
