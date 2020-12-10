@@ -1,7 +1,7 @@
 ** SysAdmin Part 1 Linux **
 by jhoohoo
 
-1. ssh level1@challenges.ringzer0team.com -p 10127 and input the password
+1. ssh morpheus@challenges.ringzer0team.com -p 10089 and input the password
 
 2. To look for Trinity's password, we neet to search the /etc/ folder recursively
     $ grep "trinity" -R /etc/

@@ -1,0 +1,37 @@
+** SysAdmin Part 2 Linux **
+by jhoohoo
+
+1. ssh morpheus@challenges.ringzer0team.com -p 10148 and input the password
+
+2. To look for architect's password, we neet to search the /etc/ folder recursively
+    $ grep "architect" -R /etc/
+
+3. Among the list of outputs, there's the password encoded in base64.
+
+    morpheus@lxc-sysadmin:~$ grep "architect" -R /etc/
+    grep: /etc/shadow-: Permission denied
+    grep: /etc/mysql/debian.cnf: Permission denied
+    grep: /etc/gshadow-: Permission denied
+    grep: /etc/subgid-: Permission denied
+    grep: /etc/alternatives/netcat: Permission denied
+    grep: /etc/alternatives/rename: Permission denied
+    grep: /etc/alternatives/rvim: Permission denied
+    grep: /etc/alternatives/view: Permission denied
+    grep: /etc/alternatives/vimdiff: Permission denied
+    grep: /etc/alternatives/rview: Permission denied
+    grep: /etc/alternatives/nc: Permission denied
+    grep: /etc/alternatives/nawk: Permission denied
+    grep: /etc/alternatives/vim: Permission denied
+    grep: /etc/alternatives/ex: Permission denied
+    grep: /etc/alternatives/vi: Permission denied
+    grep: /etc/alternatives/rcp: Permission denied
+    grep: /etc/alternatives/w: Permission denied
+    grep: /etc/alternatives/awk: Permission denied
+    /etc/fstab:#//TheMAtrix/phone  /media/Matrix  cifs  username=architect,password=$(base64 -d "RkxBRy0yMzJmOTliNDE3OGJkYzdmZWY3ZWIxZjBmNzg4MzFmOQ=="),iocharset=utf8,sec=ntlm  0  0
+
+4. username=architect,
+   password=$(base64 -d "RkxBRy0yMzJmOTliNDE3OGJkYzdmZWY3ZWIxZjBmNzg4MzFmOQ==")
+
+    We can use the following command to directly decode and we got the flag!
+    $ echo "RkxBRy0yMzJmOTliNDE3OGJkYzdmZWY3ZWIxZjBmNzg4MzFmOQ==" | base64 -d
+    FLAG-232f99b4178bdc7fef7eb1f0f78831f9
