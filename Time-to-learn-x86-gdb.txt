@@ -1,0 +1,58 @@
+** Time to learn x86 ASM & gdb **
+by jhoohoo
+
+1. Download the file and unzip.
+    $ unzip c1d20d4f360d59d4707e23a07836c82a.zip 
+    Archive:  c1d20d4f360d59d4707e23a07836c82a.zip
+    inflating: 88eb31060c4abd0931878bf7d2dd8c1a
+
+2. Run it
+    $ ./88eb31060c4abd0931878bf7d2dd8c1a
+    bash: ./88eb31060c4abd0931878bf7d2dd8c1a: Permission denied
+
+3. Set the file to be executable. You can do this with:
+    $ chmod u+x 88eb31060c4abd0931878bf7d2dd8c1a
+   Run the file ./88eb31060c4abd0931878bf7d2dd8c1a and it returns:
+    Loading...
+    Where is the flag?
+
+4. Now I'm pretty sure that the flag will be stored somewhere 
+   Disassemble the file to see what instructions will be executed:
+    $ objdump -d 88eb31060c4abd0931878bf7d2dd8c1a > dump.txt
+
+5. We can tell the basic structure of the program from the dump.txt. This is a relatively
+    short program with a main() function that doesn't call any custom-defined functions
+
+5. Run gdb on the program and set a break point at main()
+    $ gdb 88eb31060c4abd0931878bf7d2dd8c1a
+    (gdb) break main
+
+5. My favorite layout of gdb is "layout regs", where register updates are highligted after
+   every instruction.
+    (gdb) layout regs
+   Then enter "run".
+    (gdb) run
+
+6. The program will break at main(). Step through the instructions with "ni" = next 
+   instruction.
+    (gdb) ni
+
+7. After 0x8048485 call 0x8048330 <malloc@plt>, I noticed eax and edx are updated to a new
+   value 0x804b160. Suspicious. It could be where the Flag is stored. Let's step through
+   more instructions and see if the program interact with that address again.
+
+8. Then I noticed this instruction being run:
+    0x80484ae <main+66>     movl   $0x47414c46,(%eax)
+   0x47414c46 are 'FLAG' ASCII hex representation. 0x46: F, 0x4c: L, 0x41: A, and 0x47: G.
+
+9. Then I print out the string stored at $eax (0x804b160)
+    (gdb) x /s $eax
+   And I got:
+    0x804b160:      "FLAG"
+
+10. I knew 0x804b160 is where the FLAG will be stored. So I stepped to the end of main()
+    before the 'leave' instruction and print the string at that location again.
+    (gdb) x /s 0x804b160
+    0x804b160:      "FLAG-4092849uio2jfklsj4kl"
+
+Yay!!!
