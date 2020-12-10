@@ -1,0 +1,51 @@
+** SysAdmin Part 1 Linux **
+by jhoohoo
+
+1. ssh level1@challenges.ringzer0team.com -p 10127 and input the password
+
+2. To look for Trinity's password, we neet to search the /etc/ folder recursively
+    $ grep "trinity" -R /etc/
+
+3. Among the list of outputs, there's the Flag!
+
+morpheus@lxc-sysadmin:~$ grep "trinity" -R /etc/
+grep: /etc/shadow-: Permission denied
+grep: /etc/mysql/debian.cnf: Permission denied
+grep: /etc/gshadow-: Permission denied
+grep: /etc/subgid-: Permission denied
+grep: /etc/alternatives/netcat: Permission denied
+grep: /etc/alternatives/rename: Permission denied
+grep: /etc/alternatives/rvim: Permission denied
+grep: /etc/alternatives/view: Permission denied
+grep: /etc/alternatives/vimdiff: Permission denied
+grep: /etc/alternatives/rview: Permission denied
+grep: /etc/alternatives/nc: Permission denied
+grep: /etc/alternatives/nawk: Permission denied
+grep: /etc/alternatives/vim: Permission denied
+grep: /etc/alternatives/ex: Permission denied
+grep: /etc/alternatives/vi: Permission denied
+grep: /etc/alternatives/rcp: Permission denied
+grep: /etc/alternatives/w: Permission denied
+grep: /etc/alternatives/awk: Permission denied
+grep: /etc/skel: Permission denied
+/etc/rc.local:/bin/sh /root/files/backup.sh -u trinity -p Flag-7e0cfcf090a2fe53c97ea3edd3883d0d &
+grep: /etc/subuid-: Permission denied
+grep: /etc/group-: Permission denied
+grep: /etc/security/opasswd: Permission denied
+grep: /etc/ssh/ssh_host_ed25519_key: Permission denied
+grep: /etc/ssh/ssh_host_dsa_key: Permission denied
+grep: /etc/ssh/ssh_host_rsa_key: Permission denied
+grep: /etc/ssh/ssh_host_ecdsa_key: Permission denied
+/etc/group:challenger:x:1000:morpheus,trinity,architect,oracle,neo,cypher
+/etc/group:trinity:x:1002:neo
+/etc/passwd:trinity:x:1001:1002::/home/trinity:/bin/bash
+/etc/subgid:trinity:165536:65536
+/etc/subuid:trinity:165536:65536
+grep: /etc/passwd-: Permission denied
+grep: /etc/sudoers.d/README: Permission denied
+grep: /etc/gshadow: Permission denied
+grep: /etc/ssl/private: Permission denied
+grep: /etc/.pwd.lock: Permission denied
+grep: /etc/shadow: Permission denied
+grep: /etc/sudoers: Permission denied
+grep: /etc/init.d/iptables_rules.sh: Permission denied
