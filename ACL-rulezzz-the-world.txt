@@ -1,0 +1,26 @@
+** ACL rulezz the world - Challenge Access List **
+by jhoohoo
+
+1. We see a drop-down box with three options. Select any option and click "List user",
+    you will see the Username, Group, and Description of the Username you selected.
+    Therefore, the SQL query probably look something like this:
+    SELECT Username, Group, Description FROM some_table
+        WHERE Username = 'charles'
+
+3. Since we can't directly change any text, we might be able to change the values through
+    the "inspect..." from our browser.
+    
+4. Select whichever one of the three usernames, hover over the element, right click, 
+    and click "inspect..."
+
+5. We probably want to exploit this by having it show us a bunch of entries that weren't
+    among the default options ("admin", "charles", and "cedrick").
+
+6. Edit any of the option's value and change it to something like "' OR 'a'='a", 
+    where 'a'='a' is always true. Make sure to include a single quote at the very 
+    beginning to close the first condition, and exlude the single quote after the second
+    'a'.
+
+7. Select the option that you edited and click "List user".
+
+8. A lot of entries that wasn't on there before popped up, and many of them has the FLAG.
