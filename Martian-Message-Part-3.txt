@@ -1,0 +1,40 @@
+** Martian Message Part 3 **
+by jhoohoo
+
+Prompt: RU9CRC43aWdxNDsxaWtiNTFpYk9PMDs6NDFS
+
+1. Upon first looking at this, the string is 36 characters long. Since it's a multiple 
+    of 4, it could be encoded with base64. 
+
+2. After base64 decoding using https://www.base64decode.org/, I got:
+    EOBD.7igq4;1ikb51ibOO0;:41R
+
+3. "EOBD" looks suspicious. EOBD might map to "FLAG". But how?
+
+4. I used an XOR calculator https://toolslick.com/math/bitwise/xor-calculator and tested
+    E against F
+    O against L
+    B against A
+    D against G
+
+5. The result is:
+    E      1000101
+    F      1000110
+    Output 0000011 = 3
+
+    O	   1001111
+    L	   1001100
+    Output 0000011 = 3
+
+    You get the idea. I need to XOR every character in "EOBD.7igq4;1ikb51ibOO0;:41R" 
+    with decimal value '3'.
+
+6. I wrote the following code to XOR:
+    xor = 'EOBD.7igq4;1ikb51ibOO0;:41R'
+    flag = ''
+
+    for i in xor:
+        flag = flag + chr(ord(i) ^ 3)
+    print(flag)
+
+7. The result is: FLAG-4jdr782jha62jaLL38972Q
